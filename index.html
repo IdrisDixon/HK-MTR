@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>香港地鐵站粵語表</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="toolbar" aria-label="篩選工具">
+        <div class="title-block">
+          <p class="eyebrow">Cantonese MTR Sheet</p>
+          <h1>香港地鐵站粵語表</h1>
+        </div>
+
+        <div class="controls">
+          <label class="search">
+            <span>搜尋</span>
+            <input id="searchInput" type="search" placeholder="站名、粵語、路綫..." autocomplete="off">
+          </label>
+
+          <label class="select">
+            <span>路綫</span>
+            <select id="lineFilter">
+              <option value="">全部路綫</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="summary" aria-label="統計">
+        <div>
+          <span id="totalCount">0</span>
+          <small>總車站數</small>
+        </div>
+        <div>
+          <span id="visibleCount">0</span>
+          <small>目前顯示</small>
+        </div>
+        <div>
+          <span id="lineCount">0</span>
+          <small>總路綫數</small>
+        </div>
+      </section>
+
+      <section class="route-map-shell" aria-label="路綫圖">
+        <div class="section-heading">
+          <h2>路綫圖</h2>
+        </div>
+        <figure class="route-map-image">
+          <img src="route%20map.jpg" alt="香港港鐵路綫圖">
+        </figure>
+        <div id="routeMapContainer" class="route-map"></div>
+      </section>
+
+      <section class="table-shell" aria-label="粵語表">
+        <div id="tablesContainer" class="tables-container"></div>
+        <div id="emptyState" class="empty" hidden>
+          <h2>暫時未有可顯示的內容</h2>
+          <p>請將粵語表內容放入同一目錄的 contents.txt，然後重新整理頁面。支援逗號、定位字元、直線、Markdown 表格及普通多欄空格文字。</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
